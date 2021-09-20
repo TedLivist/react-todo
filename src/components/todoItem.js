@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types, react/destructuring-assignment,
-jsx-a11y/no-static-element-interactions */
+jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events */
 
 import React, { useState } from 'react';
 import { FaTrash } from 'react-icons/fa';
@@ -50,7 +50,7 @@ const TodoItem = (props) => {
         <button type="button" onClick={() => props.deleteTodoProps(id)}>
           <FaTrash style={{ color: 'red', fontSize: '16px' }} />
         </button>
-        <span onKeyDown onClick={handleEditing} style={completed ? completedStyle : null}>
+        <span onClick={handleEditing} style={completed ? completedStyle : null}>
           {title}
         </span>
       </div>
