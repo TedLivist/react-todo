@@ -1,12 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 class InputTodo extends React.Component {
   state = {
     title: ""
-  }
-
-  componentDidUpdate() {
-    console.log('Changed!')
   }
 
   onChange = e => {
