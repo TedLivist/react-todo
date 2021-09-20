@@ -12,8 +12,6 @@ const TodoContainer = () => {
   const [todos, setTodos] = useState(getInitialTodos())
 
   useEffect(() => {
-    console.log("test run")
-
     // getting todo items
     const temp = localStorage.getItem("todos")
     const loadedTodos = JSON.parse(temp)
@@ -24,7 +22,6 @@ const TodoContainer = () => {
   }, [setTodos])
 
   useEffect(() => {
-    console.log('Mm')
     // storing todos items
     const temp = JSON.stringify(todos)
     localStorage.setItem("todos", temp)
