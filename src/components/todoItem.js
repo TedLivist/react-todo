@@ -2,8 +2,24 @@ import React from 'react';
 import styles from './styles/TodoItem.module.css'
 
 class TodoItem extends React.Component {
-  render() {
-    
+
+  state = { editing: false }
+  
+  handleEditing = () => {
+    this.setState({
+      editing: true,
+    })
+    console.log('Edit mode activated')
+  }
+
+  handleUpdatedDone = event => {
+    if (event.key === "Enter") {
+      this.setState({ editing: false })
+    }
+    console.log(event.key)
+  }
+  
+  render() {  
     const { id, completed, title } = this.props.todo
     
     const completedStyle = {
@@ -13,8 +29,20 @@ class TodoItem extends React.Component {
       textDecoration: "line-through",
     }
 
+    let viewMode = {}
+    let editMode = {}
+
+    if (this.state.editing) {
+      viewMode.display = "none"
+      editMode.display = "block"
+    } else {
+      editMode.display = "none"
+      viewMode.display = "block"
+    }
+
     return (
       <li className={styles.item}>
+        <div style={viewMode}>
         <input
           type="checkbox"
           className={styles.checkbox}
@@ -24,9 +52,20 @@ class TodoItem extends React.Component {
         <button onClick={() => this.props.deleteTodoProps(id)}>
           Delete
         </button>
-        <span style={completed ? completedStyle : null}>
+        <span onClick={this.handleEditing} style={completed ? completedStyle : null}>
           {title}
         </span>
+        </div>
+
+        <input
+          type="text"
+          style={editMode}
+          className={styles.textInput}
+          value={title} 
+          onChange={e => {
+            this.props.setUpdate(e.target.value, id)
+          }}
+          onKeyDown={this.handleUpdatedDone} />
       </li>
     )
   }
