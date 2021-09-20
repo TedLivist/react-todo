@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../../functionBased/components/header';
-import InputTodo from './inputTodo';
+import InputTodo from '../../functionBased/components/inputTodo.js';
 import TodosList from './todosList';
 import { v4 as uuidv4 } from 'uuid';
 
