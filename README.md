@@ -8,6 +8,9 @@
 
 - React
 
+## Live Demo
+Visit the live demo [here](https://tedlivist.github.io/react-todo/)
+
 ## Getting Started
 
 ### Setup
