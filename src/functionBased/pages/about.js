@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link, useRouteMatch, Route } from "react-router-dom";
-import SinglePage from './singlePage'
+import { Link, useRouteMatch, Route } from 'react-router-dom';
+import SinglePage from './singlePage';
 
 const About = () => {
-  const { url, path } = useRouteMatch()
+  const { url, path } = useRouteMatch();
 
   return (
     <div>
@@ -19,7 +19,7 @@ const About = () => {
         <SinglePage />
       </Route>
     </div>
-  )
-}
- 
+  );
+};
+
 export default About;
