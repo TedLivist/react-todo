@@ -3,7 +3,7 @@ jsx-a11y/no-static-element-interactions */
 
 import React, { useState } from 'react';
 import { FaTrash } from 'react-icons/fa';
-import styles from '../../styles/TodoItem.module.css';
+import styles from '../styles/TodoItem.module.css';
 
 const TodoItem = (props) => {
   const [editing, setEditing] = useState(false);

@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import TodoContainer from './functionBased/components/todoContainer';
-import './functionBased/App.css';
+import TodoContainer from './components/todoContainer';
+import './App.css';
 
 ReactDOM.render(
   <React.StrictMode>
